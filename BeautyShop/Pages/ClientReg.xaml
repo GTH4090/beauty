@@ -1,0 +1,35 @@
+﻿<Page x:Class="BeautyShop.Pages.ClientReg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BeautyShop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Запись клиента" Loaded="Page_Loaded">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ClientServSp">
+
+            <Label x:Name="TitleLbl" Width="auto" Content="{Binding Service.Title}"/>
+            <Label x:Name="DurationLbl" Width="auto" Content="{Binding Service.DurationInSeconds}"/>
+
+            <GroupBox Header="Client">
+                <ComboBox x:Name="ClientCbx" SelectedItem="{Binding Client}" DisplayMemberPath="Name"/>
+            </GroupBox>
+            <GroupBox Header="Date">
+                <DatePicker x:Name="DateDp" SelectedDate="{Binding StartTime}"/>
+            </GroupBox>
+            <GroupBox Header="Time">
+                <TextBox x:Name="TimeTbx" TextChanged="TimeTbx_TextChanged"/>
+            </GroupBox>
+            <GroupBox Header="Время окончания">
+                <Label x:Name="FinalTime"/>
+            </GroupBox>
+            
+            <Button x:Name="OkBtn" Content="Ок" Click="OkBtn_Click"/>
+            <Button x:Name="CancelBtn" Content="Отмена" Click="CancelBtn_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Page>
